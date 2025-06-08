@@ -1,17 +1,45 @@
+<?php
+// Lista de Teste (Substituir por banco)
+$clientes = [
+    1 => 'Ana Silva',
+    2 => 'Carlos Souza',
+    3 => 'Maria Oliveira'
+];
+
+// Cliente selecionado via GET
+$clienteSelecionado = $_GET['cliente_id'] ?? null;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STS - Login</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="painelstyle.css">
 </head>
 
 <body>
-    <main>
-        <h1>Bem vindo ao STS (System To Syster)</h1>  
-    </main>
-</body>
 
+<nav>
+    <a class="btn-novo" href="cadastro.php">+</a>
+    <ul>
+        <?php foreach ($clientes as $id => $nome): ?>
+            <li>
+                <a href="?cliente_id=<?= $id ?>"><?= htmlspecialchars($nome) ?></a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</nav>
+
+<main>
+    <?php if ($clienteSelecionado && isset($clientes[$clienteSelecionado])): ?>
+        <h2>Detalhes do cliente</h2>
+        <p>Nome: <?= htmlspecialchars($clientes[$clienteSelecionado]) ?></p>
+        
+    <?php else: ?>
+        <p>Selecione um cliente para ver os detalhes.</p>
+    <?php endif; ?>
+</main>
+
+</body>
 </html>
