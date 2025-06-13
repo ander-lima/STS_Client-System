@@ -19,17 +19,16 @@ $clienteSelecionado = $_GET['cliente_id'] ?? null;
 </head>
 
 <body>
-
-<nav>
-    <a class="btn-novo" href="cadastro.php">+</a>
-    <ul>
-        <?php foreach ($clientes as $id => $nome): ?>
-            <li>
-                <a href="?cliente_id=<?= $id ?>"><?= htmlspecialchars($nome) ?></a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-</nav>
+    <nav>
+        <a class="btn-novo" href="cadastro.php">+</a>
+        <ul>
+            <?php foreach ($clientes as $id => $nome): ?>
+                <li>
+                    <a href="?cliente_id=<?= $id ?>"><?= htmlspecialchars($nome) ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </nav>
 
 <main>
     <?php if ($clienteSelecionado && isset($clientes[$clienteSelecionado])): ?>
