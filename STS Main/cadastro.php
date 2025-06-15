@@ -1,54 +1,39 @@
-<?php 
-
+<?php
 session_start();
-
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: ../STS Login/index.php");
-    exit;
-}
 include 'banco.php';
 
-$mensagem = "";
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.php");
+    exit;
+}
 
-//Verifica se foi enviado
-if ($_SERVER ["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $numero = $_POST['numero'];
-    $descricao = $_POST['descricao'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
+    $numero = mysqli_real_escape_string($conexao, $_POST['numero']);
+    $descricao = mysqli_real_escape_string($conexao, $_POST['descricao']);
+    $usuario_id = $_SESSION['usuario_id'];
 
-    //cria sql para inserir no banco
-    $sql = "INSERT INTO clientes (Nome, Número, Descrição) VALUES ('$nome', '$numero', '$descricao')";
-
-    if (mysqli_query($conexao, $sql)) {
-        $mensagem = "Cliente salvo com sucesso";
-    } else {
-        $mensagem = "Erro: " . mysqli_error($conexao);
-    }
-    mysqli_close($conexao);
+    mysqli_query($conexao, "INSERT INTO clientes (Nome, Número, Descrição, usuario_id) VALUES ('$nome', '$numero', '$descricao', $usuario_id)");
+    header("Location: painel.php");
+    exit;
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Clientes</title>
+    <title>Cadastrar Cliente</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-    <?php if ($mensagem): ?>
-        <p><?php echo $mensagem; ?></p>
-    <?php endif; ?>    
-
-    <form method="POST" action="">
+    <h1>Cadastrar Cliente</h1>
+    <form method="POST">
         Nome: <input type="text" name="nome"><br>
-        Número: <input type="text" name="numero">
-        Descrição: <input type="text" name="descricao">
+        Número: <input type="text" name="numero"><br>
+        Descrição: <input type="text" name="descricao"><br>
         <button type="submit">Salvar</button>
-        <a href="painel.php">Voltar</a>
     </form>
+    <a href="painel.php">Voltar ao Painel</a>
 </body>
 </html>
