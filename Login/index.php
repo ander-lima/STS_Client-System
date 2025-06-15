@@ -1,8 +1,8 @@
 <?php
 
-//Login fixo
-$usuario_correto = "AnneLima";
-$senha_correta = "Anne123";
+//Puxar dados de usuário no banco
+session_start();
+include '../STS Main/banco.php';
 
 $erro = "";
 $usuario_digitado = "";
@@ -11,10 +11,23 @@ $usuario_digitado = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $usuario_digitado = $_POST['usuario'] ?? '';
-    $senha = $_POST['senha'] ?? '';
+    $senha_digitada = $_POST['senha'] ?? '';
 
     //Validar senha
-    if ($usuario_digitado === $usuario_correto && $senha === $senha_correta) {
+
+
+    $sqlSenha = "SELECT id, senha FROM usuarios WHERE usuario =?";
+    $stmt = mysqli_prepare($conexao, $sqlSenha);
+    mysqli_stmt_bind_param($stmt, "s", $usuario_digitado);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $userId, $senha_correta);
+    mysqli_stmt_fetch($stmt);
+    mysqli_stmt_close($stmt);
+
+    if ($userId && $senha_digitada === $senha_correta) {
+        $_SESSION['usuario_id'] = $userId;
+        $_SESSION['usuario_nome'] = $usuario_digitado;
+
         //login correto: Redireciona
         header("Location: ../STS Main/painel.php");
         exit;

@@ -1,4 +1,11 @@
 <?php 
+
+session_start();
+
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: ../STS Login/index.php");
+    exit;
+}
 include 'banco.php';
 
 $mensagem = "";
