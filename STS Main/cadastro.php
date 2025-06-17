@@ -2,6 +2,7 @@
 session_start();
 include 'banco.php';
 
+//Verificação de permissão de usuário básica
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.php");
     exit;
@@ -31,7 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST">
         Nome: <input type="text" name="nome"><br>
         Número: <input type="text" name="numero"><br>
-        Descrição: <input type="text" name="descricao"><br>
+        <!-- Descrição: <input type="text" name="descricao"><br>-->
+         Descrição: <textarea name="descricao" rows="10" style="width: 100%"></textarea>
         <button type="submit">Salvar</button>
     </form>
     <a href="painel.php">Voltar ao Painel</a>

@@ -77,13 +77,7 @@ mysqli_close($conexao);
 </nav>
 
 <main>
-    <?php if ($clienteSelecionado && isset($detalhesCliente)): ?>
-        <h2>Detalhes do Cliente</h2>
-        <p><strong>Nome:</strong> <?= htmlspecialchars($detalhesCliente['Nome']) ?></p>
-        <p><strong>Número:</strong> <?= htmlspecialchars($detalhesCliente['Número']) ?></p>
-        <p><strong>Descrição:</strong> <?= htmlspecialchars($detalhesCliente['Descrição']) ?></p>
-
-        <!-- Formulário para apagar -->
+     <!-- Formulário para apagar -->
         <form method="POST" onsubmit="return confirm('Tem certeza que deseja apagar esse cliente?');">
             <input type="hidden" name="apagar_id" value="<?= $clienteSelecionado ?>">
             <button type="submit" style="background-color:red; color:white;">Apagar</button>
@@ -105,11 +99,20 @@ mysqli_close($conexao);
                 <input type="text" name="novo_numero" value="<?= htmlspecialchars($detalhesCliente['Número']) ?>"><br>
 
                 Descrição:<br>
-                <input type="text" name="nova_descricao" value="<?= htmlspecialchars($detalhesCliente['Descrição']) ?>"><br><br>
+                <textarea name="nova_descricao" rows="30" style="width: 100%"> <?= htmlspecialchars($detalhesCliente['Descrição']) ?> </textarea>
 
                 <button type="submit">Salvar Alterações</button>
             </form>
         </div>
+        
+    <?php if ($clienteSelecionado && isset($detalhesCliente)): ?>
+        <h2>Detalhes do Cliente</h2>
+        <p><strong>Nome:</strong> <?= htmlspecialchars($detalhesCliente['Nome']) ?></p>
+        <p><strong>Número:</strong> <?= htmlspecialchars($detalhesCliente['Número']) ?></p>
+        <p><strong>Descrição:</strong><br>
+         <?= nl2br(htmlspecialchars($detalhesCliente['Descrição'])) ?></p>
+
+       
 
         <script>
         function mostrarFormulario() {
