@@ -58,7 +58,7 @@ mysqli_close($conexao);
 <head>
     <meta charset="UTF-8">
     <title>Painel de Clientes</title>
-    <link rel="stylesheet" href="painelstyle.css">
+    <link rel="stylesheet" href="style_painel.css">
     <style>
         #formulario-editar { display: none; }
     </style>

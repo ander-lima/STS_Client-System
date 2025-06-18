@@ -31,7 +31,7 @@ header > h1 {
     text-shadow: 3px 3px 0px black;
 }
 
-main, section, article {
+section, article {
     background-color: white;
     padding: 15px;
     margin-bottom: 20px;
@@ -229,4 +229,20 @@ input[type=radio] + label, input[type=checkbox] + label {
 .erro {
     color:red;
     margin-top: 5px;
+}
+
+main.login-container {
+    width: 90%;
+    max-width: 500px;
+    min-height: 60vh;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }

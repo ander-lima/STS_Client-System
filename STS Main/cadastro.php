@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar Cliente</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_painel.css">
 
 </head>
 <body>

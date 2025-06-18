@@ -40,10 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>STS - Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_login.css">
 </head>
 <body>
-    <main>
+    <main class ="login-container">
         <h1>Login</h1>
         <?php if ($erro): ?>
             <p style="color:red;"><?= $erro ?></p>
