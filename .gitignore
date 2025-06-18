@@ -1,0 +1,20 @@
+# Ignorar dados sensíveis de configuração
+/STS Main/config_prod.php
+README_DEPLOY.txt
+
+
+# Ignorar arquivos temporários ou cache de IDEs
+*.log
+*.tmp
+.vscode/
+.idea/
+node_modules/
+vendor/
+.env
+
+# Ignorar banco de dados Local
+.sql
+
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db
