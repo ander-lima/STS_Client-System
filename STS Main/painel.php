@@ -3,7 +3,7 @@ session_start();
 include 'banco.php';
 
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: ../STS Login/index.php");
+    header("Location: ../Login/index.php");
     exit;
 }
 
