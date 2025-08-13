@@ -13,6 +13,8 @@
 
         <p>11-08-2025   </p>
         <img src="imagens/kanban_att/kanban_11.08-25.png" alt="11-08-2025">
+        <p>12-08-2025   </p>
+        <img src="imagens/kanban_att/kanban_12.08.2025.png" alt="12-08-2025">
     </main>
 </body>
 </html>
