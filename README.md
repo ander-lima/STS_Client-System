@@ -2,7 +2,12 @@
 ### STS (System To Sister): Sistema para gerenciamento de clientes para minha irmã. O objetivo é aprender a base de um projeto real que realmente será utilizando por um usuário - bem criterioso -, minha irmã :)
 
 
+## Estrutura
+Em questão de estrutura planejo criar no modelo MVC, utilizando linguagens como PHP, JavaScript e MySQL (Para banco de dados)
 
-O site é este: https://sts-system-to-tister.great-site.net
+## Link para Site
+https://sts-system-to-tister.great-site.net
 
-_Logo irei criar um usuário padrão ou criação de login. Assim que conseguir fazer isso sem expor o sistema a riscos :)_ 
+
+## OBS
+_Logo irei criar uma tela de criação de login para que possam acessar_ 
