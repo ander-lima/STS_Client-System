@@ -1,0 +1,4 @@
+O intuito da Camada de Controle:
+
+Fazer a comunicação entre Model e View.
+Ele recebe as requisições, processa e faz a lógica. Chama a Model que faz requisições e usa para processar
