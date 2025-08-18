@@ -1,0 +1,12 @@
+Camada de Apresentação (View):
+
+    Responsável por exibir informações ao usuário (HTML, CSS, JS).
+
+    Contém os formulários e elementos de interação.
+
+    Não tem regras de negócio nem acesso direto ao banco.
+
+    Exibe apenas o que o Controller manda para ela.
+
+💡 Resumo em uma frase:
+A View é a “vitrine” do sistema, responsável por mostrar ao usuário as informações vindas do Controller e receber suas interações (como formulários).

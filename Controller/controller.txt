@@ -1,4 +1,18 @@
-O intuito da Camada de Controle:
+Camada de Controle (Controller):
 
-Fazer a comunicação entre Model e View.
-Ele recebe as requisições, processa e faz a lógica. Chama a Model que faz requisições e usa para processar
+    Receber requisições do usuário
+    ex: clique em “Login”, envio de formulário, URL acessada.
+
+    Processar lógica
+    ex: Validação de formulário
+
+    Decidir ações com base nos dados recebidos
+
+    Chamar o Model para pegar ou salvar dados
+
+    Escolher a View a ser exibida
+
+    Passa os dados que o usuário precisa ver (ex.: mensagens de erro, resultados, listas)
+
+💡 Resumo em uma frase:
+O Controller é o “meio de campo” que conversa com o Model e a View, decide o que fazer com os dados e qual página mostrar ao usuário.

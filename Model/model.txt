@@ -1,0 +1,10 @@
+Camada de Dados (Model):
+
+    Responsável pelo acesso e manipulação dos Dados (CRUD)
+
+    Conexão com Banco de Dados, API externa, etc.
+
+    Contém as funções necessárias para esses acessos e manipulações
+
+💡 Resumo em uma frase:
+O Model é a “camada dos dados”, responsável por buscar, salvar e manipular informações no banco (ou outra fonte), entregando ao Controller os resultados prontos para serem usados.
