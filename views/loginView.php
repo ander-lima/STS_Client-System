@@ -15,7 +15,7 @@
         <input type="text" name="usuario" id="loginform-usuario" placeholder="Usuário" required><br>
 
         <label for="loginform-senha">Senha</label>
-        <input type="text" name="senha" id="loginform-senha" placeholder="Senha" required><br>
+        <input type="password" name="senha" id="loginform-senha" placeholder="Senha" required><br>
 
         <input type="submit" value="Fazer Login">
     </form>
