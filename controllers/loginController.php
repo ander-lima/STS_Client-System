@@ -10,11 +10,18 @@ class loginController {
             $senha =$_POST['senha'];
 
             $user = UsuarioModel::buscarPorUsuario($usuario);
-            
+
+            // Imagino que algo assim:
+            if ($senha === $user['senha']) {
+
+            header ("Location: views/painelView.php");
+            exit;
+
         } else {
             // Se não veio pelo Post, retorna login
             require 'views/loginView.php';
         }
+    }
     }
 }
 ?>
