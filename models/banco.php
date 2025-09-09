@@ -7,8 +7,8 @@ if ($_SERVER['HTTP_HOST'] === 'localhost') {
 }
 
 
-//Conexão com banco - Vai puxar o especifico do ambiente
-$conexao = mysqli_connect($host, $usuario, $senha, $banco);
+
+$conexao = mysqli_connect($host, $usuario, $senha, $banco); //Conexão com banco - Vai puxar o especifico do ambiente
 
 //Teste de Conexão
 if (!$conexao) {
