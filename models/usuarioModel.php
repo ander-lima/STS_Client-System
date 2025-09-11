@@ -6,6 +6,7 @@ include 'banco.php';
 class UsuarioModel {
 
     public static function buscarPorUsuario($usuario) {
+        global $conexao; //Avisando PHP que função deve acessar variavel global determinada dentro de banco.php
 
         $usuario = mysqli_real_escape_string($conexao, $usuario); // "Limpa" o valor de usuario para evitar SQL Injection
 
@@ -17,5 +18,10 @@ class UsuarioModel {
 
     }
 }
+
+$usuarioTeste = 'Admin';
+$resultado = UsuarioModel::buscarPorUsuario ($usuarioTeste);
+print_r($resultado);
+
 
 ?>
